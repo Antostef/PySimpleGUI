@@ -5201,7 +5201,7 @@ class Button(Element):
     """
 
     def __init__(self, button_text='', button_type=BUTTON_TYPE_READ_FORM, target=(None, None), tooltip=None,
-                 file_types=FILE_TYPES_ALL_FILES, initial_folder=None, default_extension='', disabled=False, change_submits=False,
+                 file_types=FILE_TYPES_ALL_FILES, initial_folder=None, initial_file=None, default_extension='', disabled=False, change_submits=False,
                  enable_events=False, image_filename=None, image_data=None, image_size=(None, None),
                  image_subsample=None, image_zoom=None, image_source=None, border_width=None, size=(None, None), s=(None, None), auto_size_button=None, button_color=None,
                  disabled_button_color=None,
@@ -5220,6 +5220,8 @@ class Button(Element):
         :type file_types:             Tuple[(str, str), ...]
         :param initial_folder:        starting path for folders and files
         :type initial_folder:         (str)
+        :param initial_file:          starting file name
+        :type initial_file:         (str)
         :param default_extension:     If no extension entered by user, add this to filename (only used in saveas dialogs)
         :type default_extension:      (str)
         :param disabled:              If True button will be created disabled. If BUTTON_DISABLED_MEANS_IGNORE then the button will be ignored rather than disabled using tkinter
@@ -5346,6 +5348,7 @@ class Button(Element):
         self.calendar_selection = ''
         self.default_button = None
         self.InitialFolder = initial_folder
+        self.InitialFile = initial_file
         self.DefaultExtension = default_extension
         self.Disabled = disabled
         self.ChangeSubmits = change_submits or enable_events
@@ -5551,7 +5554,7 @@ class Button(Element):
                 if not len(set(filetypes)) > 1 and (len(is_all) != 0 or filetypes == FILE_TYPES_ALL_FILES):
                     file_name = tk.filedialog.asksaveasfilename(defaultextension=self.DefaultExtension, initialdir=self.InitialFolder)
                 else:
-                    file_name = tk.filedialog.asksaveasfilename(filetypes=filetypes, defaultextension=self.DefaultExtension, initialdir=self.InitialFolder)
+                    file_name = tk.filedialog.asksaveasfilename(filetypes=filetypes, defaultextension=self.DefaultExtension, initialdir=self.InitialFolder, initialfile=self.InitialFile, parent=self.ParentForm.TKroot)
                 # elif _mac_allow_filetypes():
                 #     file_name = tk.filedialog.asksaveasfilename(filetypes=filetypes, defaultextension=self.DefaultExtension, initialdir=self.InitialFolder)
                 # else:
