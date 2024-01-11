@@ -5560,7 +5560,7 @@ class Button(Element):
                 # else:
                 #     file_name = tk.filedialog.asksaveasfilename(defaultextension=self.DefaultExtension, initialdir=self.InitialFolder)
             else:
-                file_name = tk.filedialog.asksaveasfilename(filetypes=filetypes, defaultextension=self.DefaultExtension, initialdir=self.InitialFolder, parent=self.ParentForm.TKroot)
+                file_name = tk.filedialog.asksaveasfilename(filetypes=filetypes, defaultextension=self.DefaultExtension, initialdir=self.InitialFolder, initialfile=self.InitialFile, parent=self.ParentForm.TKroot)
 
             if file_name:
                 strvar.set(file_name)
