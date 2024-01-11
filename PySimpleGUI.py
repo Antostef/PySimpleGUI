@@ -14025,7 +14025,7 @@ def FilesBrowse(button_text='Browse', target=(ThisRow, -1), file_types=FILE_TYPE
 
 
 # -------------------------  FILE BROWSE Element lazy function  ------------------------- #
-def FileSaveAs(button_text='Save As...', target=(ThisRow, -1), file_types=FILE_TYPES_ALL_FILES, initial_folder=None, initial_file=initial_file,
+def FileSaveAs(button_text='Save As...', target=(ThisRow, -1), file_types=FILE_TYPES_ALL_FILES, initial_folder=None, initial_file=None,
                default_extension='', disabled=False, tooltip=None, size=(None, None), s=(None, None), auto_size_button=None, button_color=None,
                change_submits=False, enable_events=False, font=None,
                pad=None, p=None, key=None, k=None, visible=True, metadata=None, expand_x=False, expand_y=False):
