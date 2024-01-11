@@ -14025,7 +14025,7 @@ def FilesBrowse(button_text='Browse', target=(ThisRow, -1), file_types=FILE_TYPE
 
 
 # -------------------------  FILE BROWSE Element lazy function  ------------------------- #
-def FileSaveAs(button_text='Save As...', target=(ThisRow, -1), file_types=FILE_TYPES_ALL_FILES, initial_folder=None,
+def FileSaveAs(button_text='Save As...', target=(ThisRow, -1), file_types=FILE_TYPES_ALL_FILES, initial_folder=None, initial_file=initial_file,
                default_extension='', disabled=False, tooltip=None, size=(None, None), s=(None, None), auto_size_button=None, button_color=None,
                change_submits=False, enable_events=False, font=None,
                pad=None, p=None, key=None, k=None, visible=True, metadata=None, expand_x=False, expand_y=False):
@@ -14041,6 +14041,8 @@ def FileSaveAs(button_text='Save As...', target=(ThisRow, -1), file_types=FILE_T
     :type default_extension:  (str)
     :param initial_folder:    starting path for folders and files
     :type initial_folder:     (str)
+    :param initial_file:      starting name for files
+    :type initial_file:       (str)
     :param disabled:          set disable state for element (Default = False)
     :type disabled:           (bool)
     :param tooltip:           text, that will appear when mouse hovers over the element
@@ -14078,7 +14080,7 @@ def FileSaveAs(button_text='Save As...', target=(ThisRow, -1), file_types=FILE_T
     :rtype:                   (Button)
     """
     return Button(button_text=button_text, button_type=BUTTON_TYPE_SAVEAS_FILE, target=target, file_types=file_types,
-                  initial_folder=initial_folder, default_extension=default_extension, tooltip=tooltip, size=size, s=s, disabled=disabled,
+                  initial_folder=initial_folder, initial_file=initial_file, default_extension=default_extension, tooltip=tooltip, size=size, s=s, disabled=disabled,
                   auto_size_button=auto_size_button, button_color=button_color, change_submits=change_submits,
                   enable_events=enable_events, font=font, pad=pad, p=p, key=key, k=k, visible=visible, metadata=metadata, expand_x=expand_x, expand_y=expand_y)
 
